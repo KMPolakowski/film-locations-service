@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Locations </th>
+    </tr>
+    <tr th:each="film : ${films}">
+        <td th:text="${film.getName()}"></td>
+        <td th:each="location : ${film.getLocations()}">
+            <p th:text="${location.getName()}"></p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
